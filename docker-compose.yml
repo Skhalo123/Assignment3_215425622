@@ -1,0 +1,39 @@
+version: '3.7'
+services:
+   mongodb_container:
+     image: mongo:latest
+     environment:
+      MONGO_INITDB_ROOT_USERMANE: root
+      Mongo_INITDB_ROOT_PASSWORD: rootpassword
+    ports:
+      -27017:27017
+    volumes:
+      -mongodb_data_container:/data/db
+      
+   volumes:
+      mongobd_data_container:
++
++
++ version: '3.1'
++
++ services:
++
+ db
+ +  image: mariadb
+ +  restart: always
+ +  enronment:
+ +     MYSQL_ROOT_pASSWORD: example
+ +     MYSQL_DATABASE: mydb
+ +     MYSQL_USER: user
+ +     MYSQL_PASSWORD: user
+ +
+ +  volumes:
+ +    - ./init:/docker-entrypoint-initdb.d
+ +
+ + skhalo:
+ +     image: skahlo
+ +     restart: Aalways
+ +     ports:
+          - 8080:8080
+        
+ 
